@@ -6,4 +6,4 @@
 The first time must run `npm install` to install the dependencies.
 To execute the server run `npm run start`.
 
-If you want to save the execution output run the run-logged.sh script.
+If you want to save the execution output run the run-logged.sh script. You can specify the name of the output file as the first argument of the script.
