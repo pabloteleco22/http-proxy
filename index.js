@@ -33,12 +33,16 @@ proxy.on('proxyRes', (proxyRes, req, res) => {
             res.setHeader('Access-Control-Allow-Methods', ACCESS_CONTROL_ALLOW_METHODS.join(', '))
                 .setHeader('Access-Control-Allow-Headers', ACCESS_CONTROL_ALLOW_HEADERS.join(', '));
         }
+
         res.end(Buffer.concat(body).toString());
+
+        console.log(`${req.reqId} - response sent`);
+        console.log();
     });
 });
 
 proxy.on('error', function (err, req, res) {
-    console.log(`Error on request ${req.reqId}`);
+    console.log(`${req.reqId} - Error on request`);
   res.statusCode = 502;
  
   res.end('Something went wrong');
