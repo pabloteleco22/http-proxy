@@ -42,7 +42,7 @@ proxy.on('proxyRes', (proxyRes, req, res) => {
 });
 
 proxy.on('error', function (err, req, res) {
-    console.log(`${req.reqId} - Error on request`);
+    console.log(`${req.reqId} - ${err}`);
 
     res.statusCode = 502;
     res.setHeader('Access-Control-Allow-Origin', ACCESS_CONTROL_ALLOW_ORIGIN.join(', '));
